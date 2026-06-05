@@ -5,15 +5,14 @@ import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
-
-const jwtSecret = process.env.JWT_SECRET || 'shopping-notes-local-jwt-secret';
+import { getRequiredEnv } from '../config/env';
 
 @Module({
   imports: [
     UsersModule,
     PassportModule,
     JwtModule.register({
-      secret: jwtSecret,
+      secret: getRequiredEnv('JWT_SECRET'),
       signOptions: { expiresIn: '7d' },
     }),
   ],

@@ -11,6 +11,7 @@ import { ReceiptAiModule } from './receipt-ai/receipt-ai.module';
 import { User } from './users/user.entity';
 import { ShoppingList } from './shopping-lists/shopping-list.entity';
 import { ShoppingItem } from './shopping-items/shopping-item.entity';
+import { getBooleanEnv } from './config/env';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { ShoppingItem } from './shopping-items/shopping-item.entity';
       type: 'sqlite',
       database: 'db.sqlite',
       entities: [User, ShoppingList, ShoppingItem],
-      synchronize: true,
+      synchronize: getBooleanEnv('TYPEORM_SYNCHRONIZE', false),
     }),
     UsersModule,
     AuthModule,

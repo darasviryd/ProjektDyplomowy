@@ -1,13 +1,16 @@
 # Shopping Notes API
 
-Backend aplikacji Shopping Notes przygotowany w NestJS. Serwer udostepnia proste API do synchronizacji danych uzytkownika: list zakupow, produktow, ustawien limitu oraz subskrypcji.
+Backend aplikacji Shopping Notes przygotowany w NestJS. Serwer obsluguje konta uzytkownikow, listy zakupow, produkty, synchronizacje danych oraz import paragonu.
 
 ## Technologie
 
-- NestJS;
-- TypeScript;
-- SQLite;
-- TypeORM.
+- NestJS
+- TypeScript
+- SQLite
+- TypeORM
+- JWT
+- bcrypt
+- Gemini API
 
 ## Uruchomienie
 
@@ -16,19 +19,43 @@ npm install
 npm run start
 ```
 
-Serwer dziala domyslnie pod adresem:
+Serwer dziala pod adresem `http://localhost:4000`.
 
-```text
-http://localhost:4000
-```
+## Konfiguracja
 
-## Sprawdzenie projektu
+Backend korzysta z pliku `.env`.
 
 ```bash
-npm run build
-npm run lint
+GEMINI_API_KEY=...
+GEMINI_VISION_MODEL=gemini-2.0-flash
+JWT_SECRET=...
+TYPEORM_SYNCHRONIZE=true
+CORS_ORIGIN=http://localhost:8081,http://localhost:19006
 ```
 
-## Dane
+`JWT_SECRET` jest wymagany. Bez tej zmiennej serwer nie uruchomi sie, poniewaz tokeny JWT nie powinny byc podpisywane stalym sekretem wpisanym w kodzie.
 
-Baza SQLite jest tworzona lokalnie podczas pracy aplikacji. Dane sa przypisane do konta uzytkownika, dlatego po rejestracji nowe konto nie korzysta z list ani limitow innego uzytkownika.
+`TYPEORM_SYNCHRONIZE=true` jest ustawieniem do lokalnego sprawdzania projektu z SQLite. W wersji produkcyjnej nalezaloby ustawic `false` i zastosowac migracje.
+
+## Endpointy
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `GET /lists`
+- `POST /lists`
+- `PATCH /lists/:id`
+- `DELETE /lists/:id`
+- `POST /items`
+- `PATCH /items/:id`
+- `DELETE /items/:id`
+- `POST /sync`
+- `POST /receipt-ai/analyze`
+- `POST /receipt-ai/import`
+
+## Testy
+
+```bash
+npm run test
+```
+
+Dodany test sprawdza parser paragonu, rozpoznawanie pozycji, sumy i waluty.
