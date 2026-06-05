@@ -1,16 +1,21 @@
 # Shopping Notes
 
-Mobilna aplikacja do zarzadzania listami zakupow i subskrypcjami.
+Mobilna aplikacja do planowania zakupow, wishlist, limitow budzetowych i subskrypcji.
 
 ## Funkcje
 
-- rejestracja i logowanie uzytkownika;
-- osobne listy zakupow dla kazdego konta;
-- dodawanie produktow z cena, iloscia, waluta i priorytetem;
-- oznaczanie zakupionych produktow;
-- miesieczny limit wydatkow;
-- obsluga kilku walut bez przeliczania kursow;
-- lista subskrypcji z dniem platnosci i przypomnieniem.
+- logowanie i rejestracja
+- osobne dane dla kazdego konta
+- listy zakupow i listy na konkretne wydarzenia
+- produkty z cena, iloscia, waluta, priorytetem i linkiem
+- pobieranie zdjecia produktu z linku
+- oznaczanie produktow jako kupione
+- podsumowanie wydatkow w walutach, w ktorych produkty zostaly dodane
+- globalny limit wydatkow
+- subskrypcje z dniem platnosci i przypomnieniami
+- import paragonu z tekstu
+- analiza zdjecia paragonu przez backend i Gemini API
+- praca lokalna z synchronizacja danych list i produktow
 
 ## Uruchomienie
 
@@ -19,12 +24,14 @@ npm install
 npx expo start
 ```
 
-Domyslnie aplikacja laczy sie z backendem na porcie `4000`.
-Adres API mozna zmienic przez zmienna `EXPO_PUBLIC_API_URL`.
+Aplikacja laczy sie z backendem dzialajacym na porcie `4000`. Adres API mozna ustawic w `.env` przez `EXPO_PUBLIC_API_URL`.
+
+## Konfiguracja iOS
+
+W `app.json` wlaczony jest dostep do lokalnej sieci, zeby aplikacja mogla polaczyc sie z backendem uruchomionym na komputerze. Nie jest wlaczone globalne `NSAllowsArbitraryLoads`.
 
 ## Sprawdzenie projektu
 
 ```bash
 npm run lint
-npx tsc --noEmit
 ```
