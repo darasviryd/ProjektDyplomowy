@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { ShoppingListsModule } from './shopping-lists/shopping-lists.module';
 import { ShoppingItemsModule } from './shopping-items/shopping-items.module';
 import { SyncModule } from './sync/sync.module';
+import { ReceiptAiModule } from './receipt-ai/receipt-ai.module';
 
 import { User } from './users/user.entity';
 import { ShoppingList } from './shopping-lists/shopping-list.entity';
@@ -24,6 +25,7 @@ import { ShoppingItem } from './shopping-items/shopping-item.entity';
     ShoppingListsModule,
     ShoppingItemsModule,
     SyncModule,
+    ReceiptAiModule,
   ],
 })
 export class AppModule {}

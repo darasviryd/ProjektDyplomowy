@@ -6,12 +6,14 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
 
+const jwtSecret = process.env.JWT_SECRET || 'shopping-notes-local-jwt-secret';
+
 @Module({
   imports: [
     UsersModule,
     PassportModule,
     JwtModule.register({
-      secret: 'SUPER_SECRET_KEY',
+      secret: jwtSecret,
       signOptions: { expiresIn: '7d' },
     }),
   ],
