@@ -68,7 +68,7 @@ Backend dziala domyslnie na porcie `4000`.
 
 ## Bezpieczenstwo i konfiguracja
 
-Tokeny JWT sa podpisywane sekretem z `JWT_SECRET`. Backend nie ma juz stalego sekretu wpisanego w kodzie, dlatego brak tej zmiennej zatrzyma uruchomienie aplikacji.
+Tokeny JWT sa podpisywane sekretem z `JWT_SECRET`.
 
 TypeORM ma wlaczona synchronizacje schematu tylko przez zmienna `TYPEORM_SYNCHRONIZE`. W projekcie dyplomowym zostala wartosc `true`, bo SQLite jest lokalna baza do prostego sprawdzenia aplikacji. Przy wdrozeniu produkcyjnym nalezaloby ustawic `false` i zastosowac migracje.
 
