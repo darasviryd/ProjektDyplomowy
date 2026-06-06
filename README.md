@@ -20,7 +20,7 @@ Repozytorium sklada sie z dwoch czesci.
 - obsluga kilku walut bez automatycznego przeliczania kursu
 - subskrypcje z dniem platnosci i przypomnieniami
 - import paragonu z tekstu
-- analiza zdjecia paragonu przez Gemini API
+- analiza zdjecia paragonu przez AI
 - synchronizacja danych list i produktow z backendem
 
 ## Technologie
@@ -43,7 +43,6 @@ Backend
 - TypeORM
 - JWT
 - bcrypt
-- Gemini API
 
 ## Uruchomienie
 
