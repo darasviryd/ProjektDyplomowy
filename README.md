@@ -65,21 +65,7 @@ npx expo start
 
 Backend dziala domyslnie na porcie `4000`.
 
-## Pliki env
 
-Backend korzysta z pliku `shopping-backend/.env`. W projekcie zostal zostawiony gotowy plik z kluczem API, zeby sprawdzenie projektu nie wymagalo dodatkowej konfiguracji.
-
-Najwazniejsze zmienne backendu
-
-```bash
-GEMINI_API_KEY=...
-GEMINI_VISION_MODEL=gemini-2.0-flash
-JWT_SECRET=...
-TYPEORM_SYNCHRONIZE=true
-CORS_ORIGIN=http://localhost:8081,http://localhost:19006
-```
-
-Aplikacja mobilna korzysta z pliku `shopping-notes/.env`. Zmienna `EXPO_PUBLIC_API_URL` moze wskazywac adres backendu, jezeli aplikacja jest uruchamiana na telefonie w tej samej sieci.
 
 ## Bezpieczenstwo i konfiguracja
 
