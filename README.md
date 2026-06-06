@@ -1,11 +1,11 @@
-[README.md](https://github.com/user-attachments/files/28656196/README.md)
+[README.md](https://github.com/user-attachments/files/28664610/README.md)
 # Shopping Notes
 
 Shopping Notes to aplikacja mobilna przygotowana jako projekt dyplomowy. Projekt pomaga planowac zakupy, kontrolowac budzet, zapisywac wydatki i pilnowac cyklicznych platnosci.
 
 Repozytorium sklada sie z dwoch czesci.
 
-- `shopping-notes2` aplikacja mobilna w Expo
+- `shopping-notes` aplikacja mobilna w Expo
 - `shopping-backend` backend w NestJS
 
 ## Najwazniejsze funkcje
@@ -58,7 +58,7 @@ npm run start
 Aplikacja mobilna
 
 ```bash
-cd shopping-notes2
+cd shopping-notes
 npm install
 npx expo start
 ```
@@ -79,7 +79,7 @@ TYPEORM_SYNCHRONIZE=true
 CORS_ORIGIN=http://localhost:8081,http://localhost:19006
 ```
 
-Aplikacja mobilna korzysta z pliku `shopping-notes2/.env`. Zmienna `EXPO_PUBLIC_API_URL` moze wskazywac adres backendu, jezeli aplikacja jest uruchamiana na telefonie w tej samej sieci.
+Aplikacja mobilna korzysta z pliku `shopping-notes/.env`. Zmienna `EXPO_PUBLIC_API_URL` moze wskazywac adres backendu, jezeli aplikacja jest uruchamiana na telefonie w tej samej sieci.
 
 ## Bezpieczenstwo i konfiguracja
 
